@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Payment Confirmation - 7Cellars</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  </head>
+  <body style="margin:0; padding:0; font-family: 'Lato', sans-serif; -webkit-font-smoothing:antialiased;">
+    <!-- Outer wrapper table for email clients -->
+    <table cellpadding="0" cellspacing="0" border="0" width="100%" style="padding:12px 0;">
+      <tr>
+        <td align="center">
+          <!-- Centered container (white card) -->
+          <table cellpadding="0" cellspacing="0" border="0" width="600" style="max-width:600px; background:#ffffff; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+            <!-- Header -->
+            <tr>
+              <td style="background:#0D1B2A; padding:10px 22px; color:#ffffff;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <td style="font-size:18px; font-weight:600; color:#ffffff; font-family:'Lato', sans-serif; white-space:nowrap;">
+                      7Cellars
+                    </td>
+                    <td width="100%">&nbsp;</td>
+                    <td>
+                      <img src="{{logoUrl}}" alt="logo" width="48" style="display:block;">
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- Success / icon section -->
+            <tr>
+              <td style="padding:26px 26px 6px 26px; text-align:center;">
+                <div style="width:72px; height:72px; border-radius:50%; background:rgba(9, 116, 185, 0.1); margin:0 auto 14px;">
+                  <img src="{{successIconUrl}}" alt="Success" width="36" height="36" style="display:block;padding-left:18px;padding-top:18px;">
+                </div>
+                <div style="font-size:22px; font-weight:700; color:#222; margin-bottom:8px; font-family: 'Lato', sans-serif;">Payment Successful!</div>
+                <div style="font-size:14px; color:#666; line-height:1.5; max-width:490px; margin:0 auto; font-family: 'Lato', sans-serif;">
+                  Thank you for your payment, <strong>{{customerName}}</strong>. Your payment has been processed successfully.
+                </div>
+              </td>
+            </tr>
+
+            <!-- Divider -->
+            <tr>
+              <td style="padding:18px 22px 0 22px;">
+                <div style="height:1px; background:#f0f0f0;"></div>
+              </td>
+            </tr>
+
+            <!-- Transaction Details -->
+            <tr>
+              <td style="padding:14px 22px;">
+                <div style="font-size:14px; font-weight:700; color:#222; margin-bottom:12px; font-family: 'Lato', sans-serif;">Transaction Details</div>
+
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-size:14px; color:#333; font-family: 'Lato', sans-serif;">
+                  <tr>
+                    <td style="padding:8px 0; color:#555;">Transaction ID</td>
+                    <td style="padding:8px 0; text-align:right; font-weight:700;">{{transactionId}}</td>
+                  </tr>
+                  {{invoiceRow}}
+                  <tr>
+                    <td style="padding:8px 0; color:#555;">Return Ref No</td>
+                    <td style="padding:8px 0; text-align:right; font-weight:700;">{{retRefnum}}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px 0; color:#555;">Date</td>
+                    <td style="padding:8px 0; text-align:right; font-weight:700;">{{date}}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px 0; color:#555;">Payment Method</td>
+                    <td style="padding:8px 0; text-align:right; font-weight:700;">{{cardNumber}}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px 0; color:#555;">Name</td>
+                    <td style="padding:8px 0; text-align:right; font-weight:700;">{{customerName}}</td>
+                  </tr>
+                 
+                  <tr>
+                    <td style="padding:8px 0; color:#555;">Email Address</td>
+                    <td style="padding:8px 0; text-align:right; font-weight:700;">
+                      <a style="color:#555 !important; text-decoration: none !important;" href="mailto:{{email}}">{{email}}</a>
+                    </td>
+                  </tr>
+                  {{phoneRow}}
+                  <tr>
+                    <td style="padding:8px 0; color:#555;">Address</td>
+                    <td style="padding:8px 0; text-align:right; font-weight:700;">{{address}}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px 0; color:#555;">City</td>
+                    <td style="padding:8px 0; text-align:right; font-weight:700;">{{city}}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px 0; color:#555;">Country</td>
+                    <td style="padding:8px 0; text-align:right; font-weight:700;">{{country}}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px 0; color:#555;">Postal Code</td>
+                    <td style="padding:8px 0; text-align:right; font-weight:700;">{{postalCode}}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px 0; color:#555;">Amount</td>
+                    <td style="padding:8px 0; text-align:right; font-weight:700; color:#0D1B2A">{{amount}}</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Footer area -->
+            <tr>
+              <td style="background:#f4f6fb; padding:18px 22px; text-align:center; color:#666; font-size:13px; font-family: 'Lato', sans-serif;">
+                <div style="font-size:12px; color:#999;">© 2026 7Cellars. All Rights Reserved.</div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
